@@ -8,16 +8,11 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@Path("opennms-collectorA-plugin")
+@Path("collector-A-plugin")
 public interface WebhookHandler {
 
     @GET
     @Path("/ping")
     Response ping();
 
-    @POST
-    @Path("/hook")
-    @Produces({MediaType.APPLICATION_JSON})
-    @Consumes({MediaType.APPLICATION_JSON})
-    Response handleWebhook(String body);
 }
