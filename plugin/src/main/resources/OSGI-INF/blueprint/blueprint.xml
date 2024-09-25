@@ -15,7 +15,7 @@
     </service>
 
     <service interface="org.opennms.integration.api.v1.collectors.ServiceCollectorFactory">
-        <bean class="it.arsinfo.opennms.collector.a.plugin.CollectorFactoryA">
+        <bean class="it.arsinfo.opennms.collector.a.plugin.CollectorFactory">
         </bean>
     </service>
 
