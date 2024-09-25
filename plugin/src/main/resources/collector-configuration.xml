@@ -5,5 +5,5 @@
       </service>
    </package>
 
-   <collector service="CollectorA" class-name="it.xeniaprogetti.cisco.ucs.plugin.collection.compute.UcsComputeCollector"/>
+   <collector service="CollectorA" class-name="it.arsinfo.opennms.collector.a.plugin.ACollector"/>
 </collector-configuration>
