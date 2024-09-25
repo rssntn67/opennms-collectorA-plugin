@@ -5,7 +5,6 @@
                 http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.1.0
                 http://aries.apache.org/schemas/blueprint-cm/blueprint-cm-1.1.0.xsd">
 
-    <!-- Configuration stored in $OPENNMS_HOME/etc/it.arsinfo.opennms.collector.a.plugin.cfg file -->
     <!-- Build and expose the JAX-RS annotated webhook handler.
          This will automatically mount the endpoint over the REST API. -->
     <bean id="webhookHandlerImpl" class="it.arsinfo.opennms.collector.a.plugin.WebhookHandlerImpl" />
@@ -15,6 +14,22 @@
         </service-properties>
     </service>
 
+    <service interface="org.opennms.integration.api.v1.collectors.ServiceCollectorFactory">
+        <bean class="it.arsinfo.opennms.collector.a.plugin.ACollectorFactory">
+        </bean>
+    </service>
+
     <!-- Expose our custom data collection definitions bundled in the .jar -->
+    <bean id="aCollectorConfig" class="it.arsinfo.opennms.collector.a.plugin.CollectorConfigurationExtension"/>
+    <service ref="ciscoUcsCollectorConfig"
+             interface="org.opennms.integration.api.v1.config.collector.CollectorConfigurationExtension"/>
+
+    <service interface="org.opennms.integration.api.v1.config.datacollection.ResourceTypesExtension">
+        <bean class="it.arsinfo.opennms.collector.a.plugin.ResourceTypesExtension"/>
+    </service>
+    <!-- Load Graphs -->
+    <service interface="org.opennms.integration.api.v1.config.datacollection.graphs.GraphPropertiesExtension">
+        <bean class="it.arsinfo.opennms.collector.a.plugin.GraphPropertiesExtension"/>
+    </service>
 
 </blueprint>

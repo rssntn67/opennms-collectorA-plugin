@@ -1,0 +1,9 @@
+<collector-configuration xmlns="http://xmlns.opennms.org/xsd/config/collector/api">
+   <package name="CollectorA">
+      <filter> 1 = 1 </filter>
+      <service name="CollectorA" interval="300000">
+      </service>
+   </package>
+
+   <collector service="CollectorA" class-name="it.xeniaprogetti.cisco.ucs.plugin.collection.compute.UcsComputeCollector"/>
+</collector-configuration>
