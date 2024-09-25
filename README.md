@@ -35,8 +35,4 @@ bundle:watch *
 ```
 
 
-Once installed, the plugin makes the following Karaf shell commands available:
-* opennms-opennms-collectorA-plugin:stats
-* opennms-opennms-collectorA-plugin:push-topology
-
-You can also access the REST endpoint mounted by the plugin at `http://localhost:8980/opennms/rest/opennms-collectorA-plugin/ping`
+You can also access the REST endpoint mounted by the plugin at `http://localhost:8980/opennms/rest/opennms-collector-A-plugin/ping`
